@@ -45,6 +45,9 @@ app.get('/', (req, res) => {
     });
 });
 
+
+
+//Для пользователей
 app.post('/register', (req, res) => { 
   let { name, email, password } = req.body; 
 
@@ -56,3 +59,28 @@ app.post('/register', (req, res) => {
     res.send('Пользователь успешно зарегистрирован'); 
   }); 
 });
+
+//проверка правильности введенного пароля 
+app.post('/login', (req, res) => { 
+  let { login, password } = req.body;
+  let sql = 'SELECT * FROM users WHERE email = ? AND password = ?'; 
+  let values = [login, password];
+
+  connection.query(sql, values, (err, result) => { 
+    if (err) throw err; 
+    res.send(result.length > 0); 
+  }); 
+});
+
+
+
+
+
+
+
+
+
+//Роуты страниц
+app.get('/booking', (req, res) => {
+  res.render('booking');
+})
