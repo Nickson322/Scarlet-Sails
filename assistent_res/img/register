@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование беседки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#">Моя квартира</a></li>
+                <li><a href="offers.html">Предложение</a></li>
+                <li><a href="bron.html">Бронирование</a></li>
+                
+
+            </ul>
+            <div class="btn">
+                <button>Профиль</button>
+                <button>Вопросы к УК</button>
+                <button>Помощь</button>
+            </div>
+        </div>
+    </div>
+    <div class="login">
+        <div class="login-screen">
+          <div class="app-title">
+            <h1>Регистрация</h1>
+          </div>
+    
+          <div class="login-form">
+            <div class="control-group">
+            <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+    
+            <div class="control-group">
+            <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            
+    
+            <a class="btn-login btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>
+            <a class="login-link" href="#">Есть аккаунт?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
