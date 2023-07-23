@@ -448,3 +448,19 @@ form {
     padding: 10px;
     box-shadow: #777;
   }
+
+  .card-b{
+    border: 1px solid #cfcece ;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow:  10px 10px #cfcece;
+  }
+  .card-b p{
+    padding-left: 10px;
+    font-weight: 500;
+  }
+  .card-b span{
+    font-weight: 500;
+    opacity: 0.8;
+    text-align: end;
+  }
