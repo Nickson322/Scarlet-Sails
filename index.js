@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Назначение серверу порта и запуск сервера
 const port = 3000;
 app.listen(port, () => {
-  console.log(`http://localhost:${port}`);
+  console.log(`http://localhost:${port}/sign`);
 });
 
 //установка соединения
@@ -42,20 +42,51 @@ connection.connect((err) => {
 });
 
 
-let users_arr = [];
+
 //Обработчики маршрута для GET-запроса
 app.get('/', (req, res) => {
+  let {firstName, lastName, id_user} = req.session.user;
+  let sql1 = `SELECT * FROM booking WHERE booking.id_user = '${id_user}'`;
+  let sql2 = `SELECT * FROM offers INNER JOIN users ON offers.id_user = users.id_user`;
+  let values = [firstName, lastName];
 
-  let sql = 'SELECT * FROM users';
-  connection.query(sql, (err, result) => { 
-    users_arr = result; 
+
+  let booking = [];
+  let offers = [];
+  connection.query(sql1, values, (err, result1) => { 
+    booking = result1; 
+
+    for(let i = 0; i < booking.length; i++){
+      let year = booking[i].booking_date.getFullYear();
+      let month = booking[i].booking_date.getMonth() + 1;
+      let day = booking[i].booking_date.getDate();
+
+      booking[i].booking_date = `${year}.${month}.${day}`;
+    }
+
+    connection.query(sql2, (err, result2) => {
+      offers = result2;
+
+      for(let i = 0; i < offers.length; i++){
+        let year = offers[i].placement_date.getFullYear();
+        let month = offers[i].placement_date.getMonth() + 1;
+        let day = offers[i].placement_date.getDate();
+  
+        offers[i].placement_date = `${year}.${month}.${day}`;
+      }
+
+      res.render(`index`, {
+        firstName: values[0],
+        lastName: values[1],
+        booking: booking,
+        offers: offers
+    });
+
+  
+    });
   });
 
-  res.render(`index`, {
-    users_arr: users_arr,
-  });
 
-  console.log(req.session);
 });
 //Страница авторизации
 app.get('/sign', (req, res) => {
@@ -172,7 +203,3 @@ app.get('/offers', (req, res) => {
   res.render('offers');
 })
 
-//Создание предложения
-app.post('/create_offer', (req, res) => {
-  
-})
