@@ -31,7 +31,7 @@
  }
 
 .wrap{
-    background-image: linear-gradient(0deg, rgba(255,255,255,0.6755077030812324) 20%, rgba(9,195,59,0) 98%),url(img/scarlet-sails.jpg) ;
+    background-image: linear-gradient(0deg, rgba(255,255,255,0.6755077030812324) 20%, rgba(9,195,59,0) 98%),url(../assets/scarlet-sails.jpg) ;
   
     max-width:1320px;
     background-position: 0 -90px;
