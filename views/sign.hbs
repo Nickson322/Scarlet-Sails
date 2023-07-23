@@ -14,17 +14,17 @@
                 <img src="" alt="">
             </div>
            <ul class="menu">
-                <li><a href="/index">Главная</a></li>
+                <li><a href="/">Главная</a></li>
                 <li><a href="#">Моя квартира</a></li>
                 <li><a href="/offers">Предложение</a></li>
-                <li><a href="/bron">Бронирование</a></li>
+                <li><a href="/booking">Бронирование</a></li>
                 <li><a href="#">Профиль</a></li>
                 <li><a href="#">Вопросы к УК</a></li>
                 <li><a href="#">Помощь</a></li>
             </ul>
             <div class="btn">
-                <a href="">Войти</a>
-                <a href="">Зарегестрироваться</a>
+                <a href="/sign">Войти</a>
+                <a href="/register">Зарегистрироваться</a>
             </div>
         </div>
     </div>
@@ -34,19 +34,23 @@
             <h1>Вход</h1>
           </div>
     
-          <div class="login-form">
-            <div class="control-group">
-            <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
-            <label class="login-field-icon fui-user" for="login-name"></label>
-            </div>
-    
-            <div class="control-group">
-            <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
-            <label class="login-field-icon fui-lock" for="login-pass"></label>
-            </div>
-    
-            <a class="btn-login btn-primary btn-large btn-block" href="#">Войти</a>
-            <a class="login-link" href="#">Ещё не зарегестрированны?</a>
+        
+           <form method="POST" action="/sign">
+              <div class="login-form">
+                  <div class="control-group">
+                  <input type="text" class="login-field" value="" name="log" placeholder="Логин">
+                  <label class="login-field-icon fui-user" for="login-name"></label>
+                  </div>
+          
+                  <div class="control-group">
+                  <input type="password" class="login-field" value="" name="pass" placeholder="Пароль">
+                  <label class="login-field-icon fui-lock" for="login-pass"></label>
+                  </div>
+          
+                  <button class="btn-login btn-primary btn-large btn-block" type="submit">Войти</button>
+                  <a class="login-link" href="/register">Ещё не зарегистрированны?</a>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бронирование беседки</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="header">
@@ -14,17 +14,17 @@
                 <img src="" alt="">
             </div>
             <ul class="menu">
-                <li><a href="/index">Главная</a></li>
+                <li><a href="/">Главная</a></li>
                 <li><a href="#">Моя квартира</a></li>
                 <li><a href="/offers">Предложение</a></li>
-                <li><a href="/bron">Бронирование</a></li>
+                <li><a href="/booking">Бронирование</a></li>
                 <li><a href="#">Профиль</a></li>
                 <li><a href="#">Вопросы к УК</a></li>
                 <li><a href="#">Помощь</a></li>
             </ul>
             <div class="btn">
-                <a href="">Войти</a>
-                <a href="">Зарегестрироваться</a>
+                <a href="/sign">Войти</a>
+                <a href="/register">Зарегистрироваться</a>
             </div>
         </div>
     </div>
@@ -33,21 +33,38 @@
           <div class="app-title">
             <h1>Регистрация</h1>
           </div>
-    
-          <div class="login-form">
-            <div class="control-group">
-            <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
-            <label class="login-field-icon fui-user" for="login-name"></label>
-            </div>
-    
-            <div class="control-group">
-            <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
-            <label class="login-field-icon fui-lock" for="login-pass"></label>
-            </div>
-            
-    
-            <a class="btn-login btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>
-            <a class="login-link" href="#">Есть аккаунт?</a>
+
+          <form method="POST" action="/register">
+            <div class="login-form">
+                <div class="control-group">
+                <input type="text" class="login-field" value="" name="log" placeholder="Логин">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+        
+                <div class="control-group">
+                <input type="password" class="login-field" value="" name="pass" placeholder="Пароль">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="" name="firstName" placeholder="Имя">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="" name="lastName" placeholder="Фамилия">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="" name="flat_num" placeholder="Номер квартиры">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+        
+                <button class="btn-login btn-primary btn-large btn-block" type="submit">Зарегистрироваться</button>
+                <a class="login-link" href="/sign">Есть аккаунт?</a>
+            </form>
           </div>
         </div>
       </div>

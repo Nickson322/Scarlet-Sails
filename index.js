@@ -4,6 +4,7 @@ app.use(express.static('public'));
 const hbs = require('hbs');
 const mysql = require('mysql2');
 const session = require('express-session');
+const bodyParser = require('body-parser')
 
 app.set('views','views');
 app.set('view engine','hbs');
@@ -13,6 +14,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(express.json());
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 // Назначение серверу порта и запуск сервера
@@ -39,7 +43,7 @@ connection.connect((err) => {
 
 
 let users_arr = [];
-// Обработчик маршрута для GET-запроса на корневой маршрут
+//Обработчики маршрута для GET-запроса
 app.get('/', (req, res) => {
 
   let sql = 'SELECT * FROM users';
@@ -55,20 +59,51 @@ app.get('/', (req, res) => {
 });
 //Страница авторизации
 app.get('/sign', (req, res) => {
+
+
+
   res.render(`sign`);
 });
 
+// app.get('/logout', (req, res) => {
+//   req.session.destroy((err) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.redirect('/sign');
+//     }
+//   });
+// });
+
+
 app.get('/register', (req, res) => {
+
+
+
   res.render(`register`);
+});
+
+app.get('/booking', (req, res) => {
+
+
+
+  res.render(`booking`);
+});
+
+app.get('/offers', (req, res) => {
+
+
+
+  res.render(`offers`);
 });
 
 
 
 //проверка правильности введенного пароля 
 app.post('/sign', (req, res) => { 
-  let { login, password } = req.body;
-  let sql = 'SELECT * FROM users WHERE login = ? AND password = ?'; 
-  let values = [login, password];
+  let { log, pass } = req.body;
+  let sql = 'SELECT * FROM users WHERE log = ? AND pass = ?'; 
+  let values = [log, pass];
 
   connection.query(sql, values, (err, result) => {
     // if (err) throw err; 
@@ -94,11 +129,11 @@ app.post('/sign', (req, res) => {
 
 //Для пользователей
 app.post('/register', (req, res) => { 
-  let { name, email, password } = req.body; 
+  let { log, pass, firstName, lastName, flat_num} = req.body; 
 
-  let sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)'; 
+  let sql = 'INSERT INTO users (log, pass, firstName, lastName, flat_num) VALUES (?, ?, ?, ?, ?)'; 
 
-  let values = [name, email, password];
+  let values = [log, pass, firstName, lastName, flat_num];
   connection.query(sql, values, (err, result) => { 
     if (err) throw err; 
     res.send('Пользователь успешно зарегистрирован'); 
