@@ -1,0 +1,306 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    margin: 0;
+}
+.menu li{
+   list-style-type: none;
+}
+.menu li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+ }
+
+ .btn a{
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #1901ec;
+    font-weight: 500;
+    margin-right: 5px;
+    text-decoration: none;
+    color: white;
+ }
+
+.wrap{
+    background-image: linear-gradient(0deg, rgba(255,255,255,0.6755077030812324) 20%, rgba(9,195,59,0) 98%),url(img/scarlet-sails.jpg) ;
+  
+    max-width:1320px;
+    background-position: 0 -90px;
+    padding: 15px;
+    border-radius: 10px;
+    
+}
+.wrap h1 {
+   text-align: start;
+   
+    
+}
+.wrap p {
+    text-align: start;
+   
+     
+ }
+
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.card-deck {
+    margin-top: 20px;
+}
+
+.card {
+    
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+.selected {
+    border: 2px solid #007bff;
+}
+.card p {
+    font-size: 15px;
+    font-weight: 500;
+}
+.number{
+    opacity: 0.9;
+}
+
+
+
+
+.login {
+    margin: 20px auto;
+    width: 300px;
+    }
+    .login-screen {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px
+    }
+    
+    .app-title {
+    text-align: center;
+    color: #777;
+    }
+    
+    .login-form {
+    text-align: center;
+    }
+    .control-group {
+    margin-bottom: 10px;
+    }
+    
+    input {
+    text-align: center;
+    background-color: #ECF0F1;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+    width: 250px;
+    transition: border .5s;
+    }
+    
+    input:focus {
+    border: 2px solid #3498DB;
+    box-shadow: none;
+    }
+    
+    .btn-login {
+      border: 2px solid transparent;
+      background: #3498DB;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 25px;
+      padding: 10px 0;
+      text-decoration: none;
+      text-shadow: none;
+      border-radius: 3px;
+      box-shadow: none;
+      transition: 0.25s;
+      display: block;
+      width: 250px;
+      margin: 0 auto;
+    }
+    
+    .btn-login:hover {
+      background-color: #2980B9;
+    }
+    
+    .login-link {
+      font-size: 12px;
+      color: #444;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .padding {
+        padding: 3rem !important
+    }
+    
+    .user-card-full {
+        overflow: hidden;
+    }
+    
+    .card-profile {
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+        box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+        border: 1px solid black;
+        margin-bottom: 30px;
+    }
+    
+    .m-r-0 {
+        margin-right: 0px;
+    }
+    
+    .m-l-0 {
+        margin-left: 0px;
+    }
+    
+    .user-card-full .user-profile {
+        border-radius: 5px 0 0 5px;
+    }
+    
+    .bg-c-lite-green {
+            background: -webkit-gradient(linear, left top, right top, from(#09cddb), to(#1901ec));
+        background: linear-gradient(to right, #1901ec, #09cddb);
+    }
+    
+    .user-profile {
+        padding: 20px 0;
+    }
+    
+    .card-block {
+        padding: 1.25rem;
+    }
+    
+    .m-b-25 {
+        margin-bottom: 25px;
+    }
+    
+    .img-radius {
+        border-radius: 5px;
+    }
+    
+    
+     
+    h6 {
+        font-size: 14px;
+    }
+    
+    .card .card-block p {
+        line-height: 25px;
+    }
+    
+    @media only screen and (min-width: 1400px){
+    p {
+        font-size: 14px;
+    }
+    }
+    
+    .card-block {
+        padding: 1.25rem;
+    }
+    
+    .b-b-default {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .m-b-20 {
+        margin-bottom: 20px;
+    }
+    
+    .p-b-5 {
+        padding-bottom: 5px !important;
+    }
+    
+    .card .card-block p {
+        line-height: 25px;
+    }
+    
+    .m-b-10 {
+        margin-bottom: 10px;
+    }
+    
+    .text-muted {
+        color: #919aa3 !important;
+    }
+    
+    .b-b-default {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .f-w-600 {
+        font-weight: 600;
+    }
+    
+    .m-b-20 {
+        margin-bottom: 20px;
+    }
+    
+    .m-t-40 {
+        margin-top: 20px;
+    }
+    
+    .p-b-5 {
+        padding-bottom: 5px !important;
+    }
+    
+    .m-b-10 {
+        margin-bottom: 10px;
+    }
+    
+    .m-t-40 {
+        margin-top: 20px;
+    }
+    
+    .user-card-full .social-link li {
+        display: inline-block;
+    }
+    
+    .user-card-full .social-link li a {
+        font-size: 20px;
+        margin: 0 10px 0 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
