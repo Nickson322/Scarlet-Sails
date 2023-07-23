@@ -18,8 +18,6 @@
                 <li><a href="/offers">Предложение</a></li>
                 <li><a href="/booking">Бронирование</a></li>
                 <li><a href="/profile">Профиль</a></li>
-                <li><a href="#">Вопросы к УК</a></li>
-                <li><a href="#">Помощь</a></li>
             </ul>
             <div class="btn">
                 <a href="/sign">Войти</a>
@@ -29,28 +27,14 @@
     </div>
    <div class="container">
                 <h3>Предложение:</h3>
-                <form id="reservationForm">
+                <form method="POST" action="/offers" id="reservationForm">
                     <div class="form-group">
-                        <label for="name">Имя:</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Фамилия:</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="besedka">Квартира:</label>
-                        <select id="besedka" class="form-control" required>
-                            <!-- Здесь будут добавляться беседки из JavaScript -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Дата бронирования:</label>
-                        <input type="date" id="date" class="form-control" required>
+                        <label for="date">Дата создания предложения:</label>
+                        <input type="date" name="placement_date" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Содержание:</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input type="text" name="text" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Создать</button>
                 </form>

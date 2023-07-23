@@ -18,8 +18,6 @@
                 <li><a href="/offers">Предложение</a></li>
                 <li><a href="/booking">Бронирование</a></li>
                 <li><a href="/profile">Профиль</a></li>
-                <li><a href="#">Вопросы к УК</a></li>
-                <li><a href="#">Помощь</a></li>
             </ul>
             <div class="btn">
                 <a href="/sign">Войти</a>
@@ -29,20 +27,18 @@
     </div>
     <div class="container">
                 <h3>Форма бронирования:</h3>
-                <form id="reservationForm">
+                <form method="POST" action="/booking" id="reservationForm">
                     <div class="form-group">
-                        <label for="besedka">Выберите номер беседки:</label>
-                        <select id="besedka" class="form-control" required>
-                            <!-- Здесь будут добавляться беседки из JavaScript -->
-                        </select>
+                        <label for="besedka">Напишите номер беседки:</label>
+                        <input type="text" name="pavilion_num" id="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Дата бронирования:</label>
-                        <input type="date" id="date" class="form-control" required>
+                        <input type="date" name="booking_date" id="date" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Период бронирование(в часах):</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input type="text" name="booking_period" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Забронировать</button>
                 </form>

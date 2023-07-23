@@ -19,8 +19,6 @@
                 <li><a href="/offers">Предложение</a></li>
                 <li><a href="/booking">Бронирование</a></li>
                 <li><a href="/profile">Профиль</a></li>
-                <li><a href="#">Вопросы к УК</a></li>
-                <li><a href="#">Помощь</a></li>
             </ul>
             <div class="btn">
                 <a href="/sign">Войти</a>
@@ -37,7 +35,7 @@
     </section>
    <div class="container">
         {{#each offers}}
-        <div class="is-my-offers__item_card col-md-12">
+        <div class="is-my-offers__item_card col-md-12" style="margin-bottom: 10px">
             <a href="/offers/:id" class="is-my-offers__item_card_title">
                 <p class="is-text text-500" style="color: rgb(78, 78, 78); font-size: 18px; line-height: 16px;">{{this.text}}</p>
             </a>

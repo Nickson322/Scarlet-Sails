@@ -115,11 +115,22 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/booking', (req, res) => {
-
-
-
   res.render(`booking`);
 });
+
+app.post('/booking', (req, res) => {
+  let {pavilion_num, booking_date, booking_period} = req.body;
+  let {id_user} = req.session.user;
+
+  let sql = 'INSERT INTO booking (id_user, pavilion_num, booking_date, booking_period) VALUES (?, ?, ?,?)'; 
+
+  let values = [id_user, pavilion_num, booking_date, booking_period];
+  connection.query(sql, values, (err, result) => { 
+    if (err) throw err; 
+    res.send('Бронирование успешно прошло'); 
+  }); 
+
+})
 
 app.get('/offers', (req, res) => {
 
@@ -127,6 +138,24 @@ app.get('/offers', (req, res) => {
 
   res.render(`offers`);
 });
+
+
+app.post('/offers', (req, res) => {
+  let {placement_date, text} = req.body;
+  let {id_user} = req.session.user;
+
+  let sql = 'INSERT INTO offers (id_user, placement_date, text) VALUES (?, ?, ?)'; 
+
+  let values = [id_user, placement_date, text];
+  connection.query(sql, values, (err, result) => { 
+    if (err) throw err; 
+    res.send('Создание предложения успешно прошло'); 
+  }); 
+
+});
+
+
+
 
 app.get('/profile', (req, res) => {
   let {firstName, lastName, flat_num} = req.session.user;
@@ -189,12 +218,6 @@ app.post('/register', (req, res) => {
 
 
 
-
-//Роуты страниц
-//1. Бронирования
-app.get('/booking', (req, res) => {
-  res.render('booking');
-})
 
 
 
