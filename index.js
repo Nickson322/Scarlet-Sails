@@ -97,6 +97,21 @@ app.get('/offers', (req, res) => {
   res.render(`offers`);
 });
 
+app.get('/profile', (req, res) => {
+  let {firstName, lastName, flat_num} = req.session.user;
+
+
+
+
+  res.render(`profile`, {
+    firstName: firstName,
+    lastName: lastName,
+    flat_num: flat_num
+  });
+});
+
+
+
 
 
 //проверка правильности введенного пароля 
@@ -140,15 +155,7 @@ app.post('/register', (req, res) => {
   }); 
 });
 
-app.get('/profile', (req, res) => {
-  const user = req.session.user; // Получение информации о пользователе из объекта сессии
-  if (user) {
-    // Действия, которые вы хотите выполнить с информацией о пользователе
-    res.send(`Привет, ${user.username}! Ваш email: ${user.email}`);
-  } else {
-    res.sendStatus(401); // Неавторизованный доступ
-  }
-});
+
 
 
 
