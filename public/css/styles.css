@@ -437,3 +437,14 @@ form {
   .button input[type="button"]:hover {
     background: rgb(0, 0, 207);
   }
+  .is-my-offers__item_card_bottom{
+    background-color: #cfcece;
+    margin-right: -11px;
+    margin-left: -11px;
+  }
+  .is-my-offers__item_card {
+    border: 1px solid #cfcece;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: #777;
+  }
