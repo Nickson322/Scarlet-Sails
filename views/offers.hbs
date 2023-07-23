@@ -17,7 +17,7 @@
                 <li><a href="/index">Главная</a></li>
                 <li><a href="#">Моя квартира</a></li>
                 <li><a href="/offers">Предложение</a></li>
-                <li><a href="/booking">Бронирование</a></li>
+                <li><a href="/bron">Бронирование</a></li>
                 
 
             </ul>
@@ -29,25 +29,18 @@
         </div>
     </div>
     <div class="container">
-                <h3>Форма бронирования:</h3>
-                <form id="reservationForm">
-                    <div class="form-group">
-                        <label for="besedka">Выберите номер беседки:</label>
-                        <select id="besedka" class="form-control" required>
-                            <!-- Здесь будут добавляться беседки из JavaScript -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Дата бронирования:</label>
-                        <input type="date" id="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Период бронирование(в часах):</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Забронировать</button>
-                </form>
+        
+        <h1>Выбор и бронирование беседки</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Список доступных беседок:</h3>
+                <div id="besedkiList" class="card-deck">
+                    <!-- Здесь будут добавляться беседки из JavaScript -->
+                </div>
             </div>
+            
+        </div>
+    </div>
         </div>
     </div>
 </div>

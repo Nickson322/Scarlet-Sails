@@ -81,6 +81,20 @@ app.post('/login', (req, res) => {
 
 
 //Роуты страниц
+
+//1. Бронирования
 app.get('/booking', (req, res) => {
   res.render('booking');
+})
+
+
+
+//2. Предложения
+app.get('/offers', (req, res) => {
+  res.render('offers');
+})
+
+//Создание предложения
+app.post('/create_offer', (req, res) => {
+  
 })
