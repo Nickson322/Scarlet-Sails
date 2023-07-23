@@ -25,6 +25,8 @@
                 <button>Профиль</button>
                 <button>Вопросы к УК</button>
                 <button>Помощь</button>
+                <button>Войти</button>
+                <button>Зарегестрироваться</button>
             </div>
         </div>
     </div>
